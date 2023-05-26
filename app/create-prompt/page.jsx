@@ -39,7 +39,7 @@ const CreatePrompt = () => {
 
   return (
     <Form
-      type='Objavi'
+      type='Create'
       post={post}
       setPost={setPost}
       submitting={submitting}
