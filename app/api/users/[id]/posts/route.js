@@ -9,8 +9,14 @@ export const GET = async (request, { params }) => {
 
         const prompts = await Prompt.find({ creator: params.id }).populate("creator")
 
-        return new Response(JSON.stringify(prompts), { status: 200 })
+        return new Response(JSON.stringify(prompts), { status: 200,
+            headers: {
+            'Cache-Control': 'no-store, max-age=0',
+            } })
     } catch (error) {
-        return new Response("Failed to fetch prompts created by user", { status: 500 })
+        return new Response("Failed to fetch prompts created by user", { status: 500,
+            headers: {
+            'Cache-Control': 'no-store, max-age=0',
+            } })
     }
 } 

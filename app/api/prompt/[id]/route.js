@@ -10,10 +10,16 @@ export const GET = async (request, { params }) => {
         const prompt = await Prompt.findById(params.id).populate("creator")
         if (!prompt) return new Response("Prompt Not Found", { status: 404 });
 
-        return new Response(JSON.stringify(prompt), { status: 200 })
+        return new Response(JSON.stringify(prompt), { status: 200,
+            headers: {
+            'Cache-Control': 'no-store, max-age=0',
+            } })
 
     } catch (error) {
-        return new Response("Internal Server Error", { status: 500 });
+        return new Response("Internal Server Error", { status: 500,
+            headers: {
+            'Cache-Control': 'no-store, max-age=0',
+            } });
     }
 }
 
