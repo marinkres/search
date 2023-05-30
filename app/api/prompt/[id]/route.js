@@ -12,14 +12,14 @@ export const GET = async (request, { params }) => {
 
         return new Response(JSON.stringify(prompt), { status: 200,
             headers: {
-            'Cache-Control': 'no-store, max-age=0',
-            } })
+                "Cache-Control": "s-maxage=0, stale-while-revalidate",
+            }, })
 
     } catch (error) {
         return new Response("Internal Server Error", { status: 500,
             headers: {
-            'Cache-Control': 'no-store, max-age=0',
-            } });
+                "Cache-Control": "s-maxage=0, stale-while-revalidate",
+            }, });
     }
 }
 
