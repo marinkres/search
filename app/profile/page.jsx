@@ -29,7 +29,7 @@ const MyProfile = () => {
 
   const handleDelete = async (post) => {
     const hasConfirmed = confirm(
-      "Jesi siguran?"
+      "Jesi siguran da zelis OBRISAT?"
     );
 
     if (hasConfirmed) {
