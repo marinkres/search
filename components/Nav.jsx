@@ -35,14 +35,15 @@ const Nav = () => {
           height={30}
           className='object-contain'
         />
-        <p className='logo_text'>PoseriSe</p>
+        <p className='logo_text bluemoje'>PoseriSe</p>
       </Link>
 
       {/* Desktop Navigation */}
       <div className='sm:flex hidden'>
  {session?.user ? (
  <div className='flex gap-3 md:gap-5'>
- <Link href='/create-prompt' className='black_btn'>
+ <Link href='/create-prompt' className='black_btn' 
+  style={{ backgroundColor: '#7289da' }}>
  Objavi
  </Link>
 
@@ -126,6 +127,7 @@ const Nav = () => {
  type='button'
  onClick={() => setShowModal(true)}
  className='black_btn'
+ style={{ backgroundColor: '#7289da' }}
  >
  Menu
  </button>

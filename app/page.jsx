@@ -5,10 +5,10 @@ const Home = () => (
     <h1 className='head_text text-center'>
       Poseri se
       <br className='max-md:hidden' />
-      <span className='blue_gradient text-center'> Pošteno</span>
+      <span className='bluemoje text-center'> Pošteno</span>
     </h1>
     <p className='desc text-center'>
-      Poserise je open-source alat za ostavljanje brze kritike, dodaj svoju, pretraži tuđe.
+      <strong>PoseriSe</strong> je Open-Source alat za ostavljanje brze kritike. <strong>Prijavi se</strong> kako bi započeo, ili pretraži tuđa sranja.
     </p>
 
     <Feed />

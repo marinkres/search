@@ -1,6 +1,8 @@
 "use client";
 
 import { useState, useEffect } from "react";
+import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
+import SearchIcon from '@mui/icons-material/Search';
 
 import PromptCard from "./PromptCard";
 
@@ -69,6 +71,9 @@ const Feed = () => {
 
   return (
     <section className='feed'>
+      <p className="head_textt">
+        Tražilica
+      </p>
       <form className='relative w-full flex-center'>
         <input
           type='text'
@@ -79,7 +84,7 @@ const Feed = () => {
           className='search_input peer'
         />
       </form>
-
+      <KeyboardArrowDownIcon className="head_text"/>
       {/* All Prompts */}
       {searchText ? (
         <PromptCardList
