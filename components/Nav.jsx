@@ -133,7 +133,7 @@ const Nav = () => {
  type='button'
  onClick={() => setShowModal(true)}
  className='black_btn'
- style={{ backgroundColor: '#5865f2' }}
+ style={{ backgroundColor: '#5865f2', borderColor: 'white'}}
  >
  Menu
  </button>
