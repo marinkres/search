@@ -67,6 +67,7 @@ const Nav = () => {
  type='button'
  onClick={() => setShowModal(true)}
  className='black_btn'
+ style={{ backgroundColor: '#7289da' }}
  >
  Prijava
  </button>
@@ -201,6 +202,7 @@ const Nav = () => {
  type='button'
  onClick={() => setShowModal(true)}
  className='black_btn'
+ style={{ backgroundColor: '#7289da' }}
  >
  Prijava
  </button>
