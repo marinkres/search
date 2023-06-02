@@ -97,7 +97,7 @@ const Nav = () => {
  >
  {provider.name === 'Google' && <GoogleIcon />}
  {provider.name === 'Discord' && <DiscordIcon />}
- Prijava with {provider.name}
+ Prijava sa {provider.name}
  </button>
  ))}
  <button
@@ -197,7 +197,7 @@ const Nav = () => {
  >
  {provider.name === 'Google' && <GoogleIcon />}
  {provider.name === 'Discord' && <DiscordIcon />}
- Prijava with {provider.name}
+ Prijava sa {provider.name}
  </button>
  ))}
  <button
