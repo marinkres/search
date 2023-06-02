@@ -35,7 +35,7 @@ const Nav = () => {
           height={30}
           className='object-contain'
         />
-        <p className='logo_text bluemoje'>PoseriSe</p>
+        <p className='logo_text text-white'>PoseriSe</p>
       </Link>
 
       {/* Desktop Navigation */}
@@ -43,7 +43,7 @@ const Nav = () => {
  {session?.user ? (
  <div className='flex gap-3 md:gap-5'>
  <Link href='/create-prompt' className='black_btn' 
-  style={{ backgroundColor: '#5865f2' }}>
+  style={{ backgroundColor: '#5865f2', borderColor: 'white' }}>
  Objavi
  </Link>
 

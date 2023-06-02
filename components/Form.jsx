@@ -25,7 +25,7 @@ const Form = ({ type, post, setPost, submitting, handleSubmit }) => {
             placeholder='Poseri se tu...'
             required
             className='form_textarea '
-            style={{ backgroundColor: '#36393f', borderColor: "#23272a", color: 'white'}}
+            style={{ backgroundColor: '#202225', borderColor: "#23272a", color: 'white'}}
           />
         </label>
 
@@ -43,7 +43,7 @@ const Form = ({ type, post, setPost, submitting, handleSubmit }) => {
             placeholder='#Tag'
             required
             className='form_input'
-            style={{ backgroundColor: '#36393f', borderColor: "#23272a", color: 'white'}}
+            style={{ backgroundColor: '#202225', borderColor: "#23272a", color: 'white'}}
           />
         </label>
 

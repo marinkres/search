@@ -82,10 +82,10 @@ const Feed = () => {
           onChange={handleSearchChange}
           required
           className='search_input peer'
-          style={{ backgroundColor: '#36393f', borderColor: "#23272a", color: 'white'}}
+          style={{ backgroundColor: '#202225', borderColor: "#23272a", color: 'white'}}
         />
       </form>
-      <KeyboardArrowDownIcon className="head_text" fontSize="inherit" style={{ color: '#99aab5'}}/>
+      
       {/* All Prompts */}
       {searchText ? (
         <PromptCardList
