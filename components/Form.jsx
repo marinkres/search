@@ -38,7 +38,7 @@ const Form = ({ type, post, setPost, submitting, handleSubmit }) => {
           <span className='font-satoshi font-semibold text-base text-gray-700'>
             Tvoja ocjena:
           </span>
-          <ReactStars count={5} size={24} color2={'#ffd700'} onChange={handleRatingChange} />
+          <ReactStars count={5} size={24} color2={'#ffd700'} value={rating} onChange={handleRatingChange} />
         </label>
         <label>
           <span className='font-satoshi font-semibold text-base text-gray-700'>

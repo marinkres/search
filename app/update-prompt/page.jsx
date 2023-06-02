@@ -10,7 +10,8 @@ const UpdatePrompt = () => {
   const searchParams = useSearchParams();
   const promptId = searchParams.get("id");
 
-  const [post, setPost] = useState({ prompt: "", tag: "", });
+  const [post, setPost] = useState({ prompt: "", tag: "" });
+  const [rating, setRating] = useState(0);
   const [submitting, setIsSubmitting] = useState(false);
 
   useEffect(() => {
@@ -22,6 +23,7 @@ const UpdatePrompt = () => {
         prompt: data.prompt,
         tag: data.tag,
       });
+      setRating(data.rating);
     };
 
     if (promptId) getPromptDetails();
@@ -39,6 +41,7 @@ const UpdatePrompt = () => {
         body: JSON.stringify({
           prompt: post.prompt,
           tag: post.tag,
+          rating,
         }),
       });
 
@@ -59,6 +62,8 @@ const UpdatePrompt = () => {
       setPost={setPost}
       submitting={submitting}
       handleSubmit={updatePrompt}
+      rating={rating}
+      setRating={setRating}
     />
   );
 };

@@ -67,7 +67,7 @@ const PromptCard = ({ post, handleEdit, handleDelete, handleTagClick }) => {
           />
         </div>
       </div>
-      <ReactStars count={5} size={24} color2={'#ffd700'} value={post.rating} />
+      <ReactStars count={5} size={24} color2={'#ffd700'} value={post.rating} edit={false} />
       <p className='my-4 font-satoshi text-sm text-gray-700'>{post.prompt}</p>
       <p
         className='font-inter text-sm blue_gradient cursor-pointer'

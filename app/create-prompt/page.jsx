@@ -12,6 +12,7 @@ const CreatePrompt = () => {
 
   const [submitting, setIsSubmitting] = useState(false);
   const [post, setPost] = useState({ prompt: "", tag: "" });
+  const [rating, setRating] = useState(0);
 
   const createPrompt = async (e) => {
     e.preventDefault();
@@ -24,6 +25,7 @@ const CreatePrompt = () => {
           prompt: post.prompt,
           userId: session?.user.id,
           tag: post.tag,
+          rating,
         }),
       });
 
@@ -44,6 +46,8 @@ const CreatePrompt = () => {
       setPost={setPost}
       submitting={submitting}
       handleSubmit={createPrompt}
+      rating={rating}
+      setRating={setRating}
     />
   );
 };
