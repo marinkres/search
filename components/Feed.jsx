@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from "react";
 import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
-import SearchIcon from '@mui/icons-material/Search';
+import PageviewIcon from '@mui/icons-material/Pageview';
 
 import PromptCard from "./PromptCard";
 
@@ -71,8 +71,8 @@ const Feed = () => {
 
   return (
     <section className='feed'>
-      <p className="head_textt">
-        Tražilica
+      <p className="head_text">
+        <PageviewIcon fontSize="inherit" style={{ color: '#b9bbbe' }}/>
       </p>
       <form className='relative w-full flex-center'>
         <input
@@ -82,9 +82,10 @@ const Feed = () => {
           onChange={handleSearchChange}
           required
           className='search_input peer'
+          style={{ backgroundColor: '#36393f', borderColor: "#23272a", color: 'white'}}
         />
       </form>
-      <KeyboardArrowDownIcon className="head_text"/>
+      <KeyboardArrowDownIcon className="head_text" fontSize="inherit" style={{ color: '#99aab5'}}/>
       {/* All Prompts */}
       {searchText ? (
         <PromptCardList

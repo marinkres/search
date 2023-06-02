@@ -43,7 +43,7 @@ const Nav = () => {
  {session?.user ? (
  <div className='flex gap-3 md:gap-5'>
  <Link href='/create-prompt' className='black_btn' 
-  style={{ backgroundColor: '#7289da' }}>
+  style={{ backgroundColor: '#5865f2' }}>
  Objavi
  </Link>
 
@@ -67,7 +67,7 @@ const Nav = () => {
  type='button'
  onClick={() => setShowModal(true)}
  className='black_btn'
- style={{ backgroundColor: '#7289da' }}
+ style={{ backgroundColor: '#5865f2' }}
  >
  Prijava
  </button>
@@ -96,7 +96,7 @@ const Nav = () => {
  }}
  style={{
  backgroundColor: 
- provider.name === 'Google' ? '' : '#7289DA',
+ provider.name === 'Google' ? '' : '#5865f2',
  color: 'white',
  }}
  className='flex items-center gap-2 p-2 rounded-md  hover:bg-opacity-90'
@@ -108,7 +108,7 @@ const Nav = () => {
  ))}
  <button
  onClick={() => setShowModal(false)}
- className='p-2 rounded-md'
+ className='p-2 rounded-md '
  style={{  color: '#99aab5' }}
  >
   <CloseIcon />
@@ -133,7 +133,7 @@ const Nav = () => {
  type='button'
  onClick={() => setShowModal(true)}
  className='black_btn'
- style={{ backgroundColor: '#7289da' }}
+ style={{ backgroundColor: '#5865f2' }}
  >
  Menu
  </button>
@@ -202,7 +202,7 @@ const Nav = () => {
  type='button'
  onClick={() => setShowModal(true)}
  className='black_btn'
- style={{ backgroundColor: '#7289da' }}
+ style={{ backgroundColor: '#5865f2' }}
  >
  Prijava
  </button>
@@ -231,7 +231,7 @@ const Nav = () => {
  }}
  style={{
  backgroundColor:
- provider.name === 'Google' ? '' : '#7289DA',
+ provider.name === 'Google' ? '' : '#5865f2',
  color: 'white',
  }}
  className='flex items-center gap-2 p-2 rounded-md  hover:bg-opacity-90'

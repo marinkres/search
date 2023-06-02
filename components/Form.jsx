@@ -12,7 +12,7 @@ const Form = ({ type, post, setPost, submitting, handleSubmit }) => {
 
       <form
         onSubmit={handleSubmit}
-        className='mt-10 w-full max-w-2xl flex flex-col gap-7 glassmorphism'
+        className='mt-10 w-full max-w-2xl flex flex-col gap-7 '
       >
         <label>
           <span className='font-satoshi font-semibold text-base text-gray-300'>
@@ -25,6 +25,7 @@ const Form = ({ type, post, setPost, submitting, handleSubmit }) => {
             placeholder='Poseri se tu...'
             required
             className='form_textarea '
+            style={{ backgroundColor: '#36393f', borderColor: "#23272a", color: 'white'}}
           />
         </label>
 
@@ -42,6 +43,7 @@ const Form = ({ type, post, setPost, submitting, handleSubmit }) => {
             placeholder='#Tag'
             required
             className='form_input'
+            style={{ backgroundColor: '#36393f', borderColor: "#23272a", color: 'white'}}
           />
         </label>
 
@@ -53,7 +55,8 @@ const Form = ({ type, post, setPost, submitting, handleSubmit }) => {
           <button
             type='submit'
             disabled={submitting}
-            className='px-5 py-1.5 text-sm bg-black rounded-full text-white'
+            className='px-5 py-1.5 text-sm rounded-full text-white'
+            style={{ backgroundColor: '#5865f2'}}
           >
             {submitting ? `${type}ing...` : type}
           </button>

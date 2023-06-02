@@ -174,11 +174,14 @@
 }
 
 .bluemoje{
-  color: 	#7289da;
+  color: 	#5865f2;
 }
 .bluemojebg{
-  blackground: #7289da;
+  blackground: #5865f2;
 }
 .crveno{
   color: 	#d62d20;
+}
+.eschover-button:hover {
+  color: #ed4245;
 }
