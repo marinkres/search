@@ -80,7 +80,8 @@ const Nav = () => {
  ></div>
  <div className='fixed inset-0 z-50 flex items-center justify-center'>
  <div
- className='bg-white p-8 rounded-lg shadow-lg'
+ className='p-8 rounded-lg shadow-lg'
+ style={{ backgroundColor: '#2c2f33' }}
  onClick={(e) => e.stopPropagation()}
  >
  {/* Modal content */}
@@ -93,11 +94,11 @@ const Nav = () => {
  signIn(provider.id);
  }}
  style={{
- backgroundColor:
- provider.name === 'Google' ? '#4285F4' : '#7289DA',
+ backgroundColor: 
+ provider.name === 'Google' ? '' : '#7289DA',
  color: 'white',
  }}
- className='flex items-center gap-2 p-2 rounded-md border border-gray-300 hover:bg-opacity-90'
+ className='flex items-center gap-2 p-2 rounded-md  hover:bg-opacity-90'
  >
  {provider.name === 'Google' && <GoogleIcon />}
  {provider.name === 'Discord' && <DiscordIcon />}
@@ -106,9 +107,11 @@ const Nav = () => {
  ))}
  <button
  onClick={() => setShowModal(false)}
- className='p-2 rounded-md border border-gray-300 hover:bg-gray-100'
+ className='p-2 rounded-md'
+ style={{  color: '#99aab5' }}
  >
- Close
+  <CloseIcon />
+  Esc
  </button>
  </div>
  </div>
@@ -118,6 +121,8 @@ const Nav = () => {
  </>
  )}
  </div>
+
+
 
       {/* Mobile Navigation */}
       <div className='sm:hidden flex relative'>
@@ -141,7 +146,7 @@ const Nav = () => {
  ></div>
  <div className='fixed inset-0 z-50 flex items-center justify-center'>
  <div
- className='bg-white p-8 rounded-lg shadow-lg'
+ className='p-8 rounded-lg shadow-lg'
  style={{ backgroundColor: '#2c2f33' }}
  onClick={(e) => e.stopPropagation()}
  >
@@ -149,8 +154,8 @@ const Nav = () => {
  <div className='flex flex-col gap-4'>
  <Link
  href='/profile'
- style={{ backgroundColor: '#7289da', color: '#FFFFFF' }}
- className='p-2 rounded-md text-center hover:bg-gray-100'
+ style={{ color: '#FFFFFF' }}
+ className='p-2 rounded-md text-center hover:bg-gray-600'
  onClick={() => setShowModal(false)}
  >
   <PersonIcon />
@@ -158,8 +163,8 @@ const Nav = () => {
  </Link>
  <Link
  href='/create-prompt'
- style={{ backgroundColor: '#7289da', color: '#FFFFFF' }}
- className='p-2 rounded-md  text-center hover:bg-gray-100'
+ style={{  color: '#FFFFFF' }}
+ className='p-2 rounded-md  text-center hover:bg-gray-600'
  onClick={() => setShowModal(false)}
  >
   <CreateIcon />
@@ -209,7 +214,8 @@ const Nav = () => {
  ></div>
  <div className='fixed inset-0 z-50 flex items-center justify-center'>
  <div
- className='bg-white p-8 rounded-lg shadow-lg'
+ className='p-8 rounded-lg shadow-lg'
+ style={{ backgroundColor: '#2c2f33' }}
  onClick={(e) => e.stopPropagation()}
  >
  {/* Modal content */}
@@ -223,21 +229,23 @@ const Nav = () => {
  }}
  style={{
  backgroundColor:
- provider.name === 'Google' ? '#4285F4' : '#7289DA',
+ provider.name === 'Google' ? '' : '#7289DA',
  color: 'white',
  }}
- className='flex items-center gap-2 p-2 rounded-md border border-gray-300 hover:bg-opacity-90'
+ className='flex items-center gap-2 p-2 rounded-md  hover:bg-opacity-90'
  >
  {provider.name === 'Google' && <GoogleIcon />}
  {provider.name === 'Discord' && <DiscordIcon />}
- Prijava with {provider.name}
+ Prijava sa {provider.name}
  </button>
  ))}
  <button
  onClick={() => setShowModal(false)}
- className='p-2 rounded-md border border-gray-300 hover:bg-gray-100'
+ className='p-2 rounded-md '
+ style={{  color: '#99aab5' }}
  >
- Close
+ <CloseIcon />
+ Esc
  </button>
  </div>
  </div>
