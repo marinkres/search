@@ -4,7 +4,7 @@ import { useState } from "react";
 import Image from "next/image";
 import { useSession } from "next-auth/react";
 import { usePathname, useRouter } from "next/navigation";
-
+import { Person } from "@mui/icons-material";
 const PromptCard = ({ post, handleEdit, handleDelete, handleTagClick }) => {
   const { data: session } = useSession();
   const pathName = usePathname();
@@ -25,7 +25,12 @@ const PromptCard = ({ post, handleEdit, handleDelete, handleTagClick }) => {
     navigator.clipboard.writeText(post.prompt);
     setTimeout(() => setCopied(false), 3000);
   };
-
+  const randomColor = () => {
+    const r = Math.floor(Math.random() * 256);
+    const g = Math.floor(Math.random() * 256);
+    const b = Math.floor(Math.random() * 256);
+    return `rgb(${r}, ${g}, ${b})`;
+  };
   return (
     <div className='prompt_card'>
       <div className='flex justify-between items-start gap-5'>
@@ -33,13 +38,19 @@ const PromptCard = ({ post, handleEdit, handleDelete, handleTagClick }) => {
           className='flex-1 flex justify-start items-center gap-3 cursor-pointer'
           onClick={handleProfileClick}
         >
-          <Image
-            src={post.creator.image}
-            alt='user_image'
-            width={40}
-            height={40}
-            className='rounded-full object-contain'
-          />
+          <div
+            style={{
+              backgroundColor: randomColor(),
+              width: 40,
+              height: 40,
+              display: "flex",
+              justifyContent: "center",
+              alignItems: "center",
+            }}
+            className='rounded-full'
+          >
+            <Person style={{ color: "white" }} />
+          </div>
 
           <div className='flex flex-col'>
             <h3 className='font-satoshi font-semibold text-gray-300'>
