@@ -3,8 +3,9 @@
 import { useState, useEffect } from "react";
 import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
 import PageviewIcon from '@mui/icons-material/Pageview';
-
+import BeatLoader from "react-spinners/BeatLoader";
 import PromptCard from "./PromptCard";
+
 
 const PromptCardList = ({ data, handleTagClick }) => {
   return (
@@ -22,17 +23,19 @@ const PromptCardList = ({ data, handleTagClick }) => {
 
 const Feed = () => {
   const [allPosts, setAllPosts] = useState([]);
-
+  const [isLoading, setIsLoading] = useState(true);
   // Search states
   const [searchText, setSearchText] = useState("");
   const [searchTimeout, setSearchTimeout] = useState(null);
   const [searchedResults, setSearchedResults] = useState([]);
 
   const fetchPosts = async () => {
+    setIsLoading(true);
     const response = await fetch("/api/prompt", { cache: 'no-store' });
     const data = await response.json();
 
     setAllPosts(data);
+    setIsLoading(false);
   };
 
   useEffect(() => {
@@ -87,7 +90,11 @@ const Feed = () => {
       </form>
       
       {/* All Prompts */}
-      {searchText ? (
+      {isLoading ? (
+        <div style={{ marginTop: "110px" }}> {/* add top margin to div */}
+        <BeatLoader color={"#5865f2"} />
+      </div>
+      ) : searchText ? (
         <PromptCardList
           data={searchedResults}
           handleTagClick={handleTagClick}
