@@ -6,6 +6,9 @@ import { useEffect, useState } from "react";
 import { signIn, signOut, useSession, getProviders } from "next-auth/react";
 import GoogleIcon from '@mui/icons-material/Google';
 import DiscordIcon from '@mui/icons-material/SportsEsports';
+import PersonIcon from '@mui/icons-material/Person';
+import CreateIcon from '@mui/icons-material/Create';
+import CloseIcon from '@mui/icons-material/Close';
 
 const Nav = () => {
   const { data: session } = useSession();
@@ -119,42 +122,70 @@ const Nav = () => {
       <div className='sm:hidden flex relative'>
  {session?.user ? (
  <div className='flex'>
- <Image
- src={session?.user.image}
- width={37}
- height={37}
- className='rounded-full'
- alt='profile'
- onClick={() => setToggleDropdown(!toggleDropdown)}
- />
+ <button
+ type='button'
+ onClick={() => setShowModal(true)}
+ className='black_btn'
+ >
+ Menu
+ </button>
 
- {toggleDropdown && (
- <div className='dropdown'>
+ {showModal && (
+ <>
+ <div
+ className='fixed inset-0 z-50 bg-black bg-opacity-50'
+ style={{ backdropFilter: 'blur(5px)' }}
+ onClick={() => setShowModal(false)}
+ ></div>
+ <div className='fixed inset-0 z-50 flex items-center justify-center'>
+ <div
+ className='bg-white p-8 rounded-lg shadow-lg'
+ style={{ backgroundColor: '#2c2f33' }}
+ onClick={(e) => e.stopPropagation()}
+ >
+ {/* Modal content */}
+ <div className='flex flex-col gap-4'>
  <Link
  href='/profile'
- className='dropdown_link'
- onClick={() => setToggleDropdown(false)}
+ style={{ backgroundColor: '#7289da', color: '#FFFFFF' }}
+ className='p-2 rounded-md text-center hover:bg-gray-100'
+ onClick={() => setShowModal(false)}
  >
+  <PersonIcon />
  Moj profil
  </Link>
  <Link
  href='/create-prompt'
- className='dropdown_link'
- onClick={() => setToggleDropdown(false)}
+ style={{ backgroundColor: '#7289da', color: '#FFFFFF' }}
+ className='p-2 rounded-md  text-center hover:bg-gray-100'
+ onClick={() => setShowModal(false)}
  >
+  <CreateIcon />
  Objavi
  </Link>
  <button
  type='button'
  onClick={() => {
- setToggleDropdown(false);
+ setShowModal(false);
  signOut();
  }}
- className='mt-5 w-full black_btn'
+ className='mt-5 w-full black_btn border-none'
+ style={{ backgroundColor: '#d62d20' }}
  >
  Odjava
  </button>
+ <button
+ onClick={() => setShowModal(false)}
+ className='w-full '
+ style={{  color: '#99aab5' }}
+ >
+ <CloseIcon />
+ Esc
+ </button>
  </div>
+ </div>
+ </div>
+ </>
  )}
  </div>
  ) : (
@@ -197,7 +228,7 @@ const Nav = () => {
  >
  {provider.name === 'Google' && <GoogleIcon />}
  {provider.name === 'Discord' && <DiscordIcon />}
- Prijava sa {provider.name}
+ Prijava with {provider.name}
  </button>
  ))}
  <button
