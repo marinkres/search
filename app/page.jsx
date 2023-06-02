@@ -8,7 +8,7 @@ const Home = () => (
       <span className='blue_gradient text-center'> Pošteno</span>
     </h1>
     <p className='desc text-center'>
-      Poserise je open-source alat za ostavljanje brze kritike, dodaj svoju, pretraži tuđe.
+      Poserise je open-source alat za ostavljanje brze kritike. Prijavi se te dodaj svoju ili pretraži tuđe.
     </p>
 
     <Feed />

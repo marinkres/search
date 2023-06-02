@@ -50,7 +50,7 @@ const MyProfile = () => {
   return (
     <Profile
       name='Moj'
-      desc='Dobrodošao na svoj profil.'
+      desc='Dobrodošao na svoj profil. Uredi ili obriši svoja Sranja.'
       data={myPosts}
       handleEdit={handleEdit}
       handleDelete={handleDelete}

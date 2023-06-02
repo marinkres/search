@@ -1,6 +1,14 @@
 import Link from "next/link";
+import ReactStars from 'react-stars';
+import { useState } from 'react';
 
 const Form = ({ type, post, setPost, submitting, handleSubmit }) => {
+  const [rating, setRating] = useState(0);
+
+  const handleRatingChange = (newRating) => {
+    setRating(newRating);
+  }
+
   return (
     <section className='w-full max-w-full flex-start flex-col'>
       <h1 className='head_text text-left'>
@@ -18,7 +26,6 @@ const Form = ({ type, post, setPost, submitting, handleSubmit }) => {
           <span className='font-satoshi font-semibold text-base text-gray-700'>
             Tvoja objava
           </span>
-
           <textarea
             value={post.prompt}
             onChange={(e) => setPost({ ...post, prompt: e.target.value })}
@@ -27,7 +34,12 @@ const Form = ({ type, post, setPost, submitting, handleSubmit }) => {
             className='form_textarea '
           />
         </label>
-
+        <label>
+          <span className='font-satoshi font-semibold text-base text-gray-700'>
+            Tvoja ocjena:
+          </span>
+          <ReactStars count={5} size={24} color2={'#ffd700'} onChange={handleRatingChange} />
+        </label>
         <label>
           <span className='font-satoshi font-semibold text-base text-gray-700'>
             Tagovi{" "}
