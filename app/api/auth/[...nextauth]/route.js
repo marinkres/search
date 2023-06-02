@@ -32,27 +32,8 @@ const handler = NextAuth({
         // check if user already exists
         const userExists = await User.findOne({ email: profile.email });
 
-        // Array of names and numbers
-        const names = [
-          "Alice",
-          "Bob",
-          "Charlie",
-          "Dave",
-          "Eve",
-          "Frank",
-          "Grace",
-          "Hank",
-          "Ivy",
-          1,
-          2,
-          3,
-          4,
-          5,
-          6,
-          7,
-          8,
-          9,
-        ];
+        // Array of names
+        const names = ["Tito", "Boban", "Vrabac", "Dragan", "Sladjana", "Jamnica", "Carti", "Mentol", "Kurton"];
 
         // Function to generate a deterministic random name based on the user's ID
         const randomName = (userId) => {
@@ -63,14 +44,31 @@ const handler = NextAuth({
           const index = parseInt(hash.slice(0, 8), 16);
 
           // Use the integer value to select a name from the names array
-          return names[index % names.length];
+          const name = names[index % names.length];
+
+          // Generate a random number between 1 and 1000
+          const number = Math.floor(Math.random() * 1000) + 1;
+
+          // Combine the name and number to generate a unique username
+          return `${name}${number}`;
         };
 
         // if not, create a new document and save user in MongoDB
         if (!userExists) {
+          let username = randomName(profile.id);
+
+          // Check if the generated username already exists in the database
+          let usernameExists = await User.findOne({ username });
+
+          // Keep generating new usernames until we find one that doesn't exist in the database
+          while (usernameExists) {
+            username = randomName(profile.id);
+            usernameExists = await User.findOne({ username });
+          }
+
           await User.create({
             email: profile.email,
-            username: randomName(profile.id), // Generate a random unique name for each user based on their ID
+            username, // Use the generated unique username
             image: profile.picture,
           });
         }
@@ -83,5 +81,4 @@ const handler = NextAuth({
     },
   },
 });
-
 export { handler as GET, handler as POST }
