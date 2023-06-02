@@ -8,7 +8,7 @@ const Home = () => (
       <span className='bluemoje text-center'> Pošteno</span>
     </h1>
     <p className='desc text-center'>
-      <strong>PoseriSe</strong> je Open-Source alat za ostavljanje brze kritike. <strong>Prijavi se</strong> kako bi započeo, ili pretraži tuđa sranja.
+    Open-Source alat za <span style={{color: '#57f287'}}><strong>Anonimno</strong></span> ostavljanje brze kritike. <strong>Prijavi se</strong> kako bi započeo, ili pretraži tuđa sranja.
     </p>
 
     <Feed />
