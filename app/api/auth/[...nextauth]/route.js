@@ -36,9 +36,9 @@ const handler = NextAuth({
         const names = ["Tito", "Boban", "Vrabac", "Dragan", "Sladjana", "Jamnica", "Carti", "Mentol", "Kurton"];
 
         // Function to generate a deterministic random name based on the user's ID
-        const randomName = (userId) => {
+        const randomName = (userEmail) => {
           // Generate a hash value based on the user's ID
-          const hash = SHA256(userId).toString();
+          const hash = SHA256(userEmail).toString();
 
           // Convert the first 8 characters of the hash value to an integer
           const index = parseInt(hash.slice(0, 8), 16);
@@ -55,14 +55,14 @@ const handler = NextAuth({
 
         // if not, create a new document and save user in MongoDB
         if (!userExists) {
-          let username = randomName(profile.id);
+          let username = randomName(profile.email);
 
           // Check if the generated username already exists in the database
           let usernameExists = await User.findOne({ username });
 
           // Keep generating new usernames until we find one that doesn't exist in the database
           while (usernameExists) {
-            username = randomName(profile.id);
+            username = randomName(profile.email);
             usernameExists = await User.findOne({ username });
           }
 
