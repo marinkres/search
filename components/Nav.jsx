@@ -65,7 +65,7 @@ const Nav = () => {
                   }}
                   className='black_btn'
                 >
-                  Prijava
+                  Prijava {provider.name}
                 </button>
               ))}
           </>
@@ -126,7 +126,7 @@ const Nav = () => {
                   }}
                   className='black_btn'
                 >
-                  Prijava
+                  Prijava {provider.name}
                 </button>
               ))}
           </>
