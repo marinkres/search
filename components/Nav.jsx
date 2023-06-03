@@ -35,7 +35,7 @@ const Nav = () => {
           height={30}
           className='object-contain'
         />
-        <p className='logo_text text-white'>PoseriSe</p>
+        <p className='logo_text ' style={{ color: '#FFF8F0'}}>PoseriSe</p>
       </Link>
 
       {/* Desktop Navigation */}

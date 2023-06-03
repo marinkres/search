@@ -75,7 +75,7 @@ const Feed = () => {
   return (
     <section className='feed'>
       <p className="head_text">
-        <PageviewIcon fontSize="inherit" style={{ color: '#b9bbbe' }}/>
+        <PageviewIcon fontSize="inherit" style={{ color: '#FFF8F0' }}/>
       </p>
       <form className='relative w-full flex-center'>
         <input
