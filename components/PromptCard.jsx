@@ -79,7 +79,7 @@ const PromptCard = ({ post, handleEdit, handleDelete, handleTagClick }) => {
  return `rgb(${r}, ${g}, ${b})`;
  };
  return (
- <div className='prompt_card'>
+ <div className='prompt_card rounded-xl'>
  <div className='flex justify-between items-start gap-5'>
  <div
  className='flex-1 flex justify-start items-center gap-3 cursor-pointer'
@@ -100,9 +100,12 @@ const PromptCard = ({ post, handleEdit, handleDelete, handleTagClick }) => {
  </div>
 
  <div className='flex flex-col'>
- <h3 className='font-satoshi font-semibold ' style={{color:'#FFF8F0'}}>
- {post.creator.username}
- </h3>
+ <h3 className='font-satoshi font-semibold' style={{color:'#FFF8F0'}}>
+  {post.creator.username}
+  <span className="ml-1" style={{color: 'darkgray', fontSize: 'smaller', fontWeight: 'lighter'}}>
+    @{post.creator.username}
+  </span>
+</h3>
  {/*
  <p className='font-inter text-sm text-gray-500'>
  {post.creator.email}

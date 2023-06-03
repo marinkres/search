@@ -25,7 +25,7 @@ const UserProfile = ({ params }) => {
   return (
     <Profile
       name={userName}
-      desc={`Dobrodošao na ${userName} profil. Istraži ${userName} sranja`}
+      desc={`Dobrodošao, istraži @${userName} sranja`}
       data={userPosts}
     />
   );

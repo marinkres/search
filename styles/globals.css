@@ -19,7 +19,7 @@
 }
 
 .main:before {
-  background: #36393f;
+  background: #202225;
   position: absolute;
   content: "";
   z-index: 2;
@@ -127,7 +127,7 @@ background-image: linear-gradient(0deg, #202225 0%, #5865f2 100%);
 }
 
 .glassmorphism {
-  @apply rounded-xl border border-gray-200 bg-white/10 shadow-[inset_10px_-50px_94px_0_rgb(199,199,199,0.2)] backdrop-blur p-5;
+  @apply rounded-xl border border-gray-200 bg-white/50 shadow-[inset_10px_-50px_94px_0_rgb(199,199,199,0.2)] backdrop-blur p-5;
 }
 
 .prompt_layout {

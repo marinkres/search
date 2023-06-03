@@ -85,7 +85,7 @@ const Feed = () => {
           onChange={handleSearchChange}
           required
           className='search_input peer'
-          style={{ backgroundColor: '#202225', borderColor: "#23272a", color: 'white'}}
+          style={{ backgroundColor: '#36393f', borderColor: "#23272a", color: 'white'}}
         />
       </form>
       
