@@ -95,7 +95,7 @@ const Form = ({ type, post, setPost, submitting, handleSubmit }) => {
  </label>
  <label>
  <span className='font-satoshi font-semibold text-base text-gray-300'>
- Rating:
+ Mood:
  </span>
  <div className="mt-2 "> 
    <StyledRating
