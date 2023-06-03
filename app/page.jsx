@@ -8,7 +8,7 @@ const Home = () => (
       <span className='bluemoje text-center'> Pošteno</span>
     </h1>
     <p className='desc text-center'>
-    Open-Source alat za <span style={{color: '#ED6A5A'}}><strong>Anonimno</strong></span> ostavljanje brze kritike. <span style={{color: '#FFF8F0'}}><strong>Prijavi se</strong></span> kako bi započeo, ili pretraži tuđa sranja.
+    Open-Source alat za <span style={{color: '#f2e558'}}><strong>Anonimno</strong></span> ostavljanje brze kritike. <span style={{color: '#FFF8F0'}}><strong>Prijavi se</strong></span> kako bi započeo, ili pretraži tuđa sranja.
     </p>
 
     <Feed />

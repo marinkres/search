@@ -16,7 +16,7 @@ import SentimentVerySatisfiedIcon from '@mui/icons-material/SentimentVerySatisfi
 
 const StyledRating = styled(Rating)(({ theme }) => ({
   '& .MuiRating-iconEmpty .MuiSvgIcon-root': {
-    color: theme.palette.action.disabled,
+    color: 'grey',
   },
 }));
 
@@ -134,7 +134,15 @@ const PromptCard = ({ post, handleEdit, handleDelete, handleTagClick }) => {
      IconContainerComponent={IconContainer}
      getLabelText={(value) => customIcons[value]?.label ?? ''}
      size="small"
+     highlightSelectedOnly
    />
+   {/* Display the selected rating value here 
+   {post.rating > 0 && (
+     <div className="text-gray-400" style={{  }}>
+        {post.rating}/5
+     </div>
+   )}
+   */}
  <p
  className='font-inter text-sm bluemoje cursor-pointer'
  onClick={() => handleTagClick && handleTagClick(post.tag)}

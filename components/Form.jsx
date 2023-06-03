@@ -80,7 +80,7 @@ const Form = ({ type, post, setPost, submitting, handleSubmit }) => {
  <span className='font-satoshi font-semibold text-base text-gray-300'>
  Tagovi{" "}
  <span className='font-normal'>
- (#Sto god)
+ (#Sto, #god):
  </span>
  </span>
  <input
@@ -107,7 +107,14 @@ const Form = ({ type, post, setPost, submitting, handleSubmit }) => {
      IconContainerComponent={IconContainer}
      getLabelText={(value) => customIcons[value].label}
      size="large"
+     highlightSelectedOnly
    />
+   {/* Display the selected rating value here 
+   {post.rating > 0 && (
+     <div style={{ marginTop: 8 }}>
+       {post.rating}/5
+     </div>
+   )}*/}
  </div>
  </label>
 
