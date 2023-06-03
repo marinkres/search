@@ -5,6 +5,8 @@ import Image from "next/image";
 import { useSession } from "next-auth/react";
 import { usePathname, useRouter } from "next/navigation";
 import { Person } from "@mui/icons-material";
+import Rating from '@mui/material/Rating';
+
 const PromptCard = ({ post, handleEdit, handleDelete, handleTagClick }) => {
   const { data: session } = useSession();
   const pathName = usePathname();
@@ -79,6 +81,8 @@ const PromptCard = ({ post, handleEdit, handleDelete, handleTagClick }) => {
       </div>
 
       <p className='my-4 font-satoshi text-sm text-gray-300'>{post.prompt}</p>
+      {/* Display the rating data using the Material-UI Rating component */}
+      <Rating name="read-only" value={post.rating} readOnly />
       <p
         className='font-inter text-sm bluemoje cursor-pointer'
         onClick={() => handleTagClick && handleTagClick(post.tag)}

@@ -1,5 +1,7 @@
 import Link from "next/link";
 import CloseIcon from '@mui/icons-material/Close';
+import Rating from '@mui/material/Rating';
+
 const Form = ({ type, post, setPost, submitting, handleSubmit }) => {
   return (
     <section className='w-full max-w-full flex-start flex-col'>
@@ -16,7 +18,7 @@ const Form = ({ type, post, setPost, submitting, handleSubmit }) => {
       >
         <label>
           <span className='font-satoshi font-semibold text-base text-gray-300'>
-            Tvoja objava
+            Tvoja objava:
           </span>
 
           <textarea
@@ -33,7 +35,7 @@ const Form = ({ type, post, setPost, submitting, handleSubmit }) => {
           <span className='font-satoshi font-semibold text-base text-gray-300'>
             Tagovi{" "}
             <span className='font-normal'>
-              (#poslodavac, #proizvod, #ideja, etc.)
+              (#Sto god)
             </span>
           </span>
           <input
@@ -46,6 +48,20 @@ const Form = ({ type, post, setPost, submitting, handleSubmit }) => {
             style={{ backgroundColor: '#202225', borderColor: "#23272a", color: 'white'}}
           />
         </label>
+        <label>
+            <span className='font-satoshi font-semibold text-base text-gray-300'>
+              Rating:
+            </span>
+            <div>
+              <Rating
+                name="rating"
+                value={post.rating}
+                onChange={(event, newValue) => {
+                  setPost({ ...post, rating: newValue });
+                }}
+              />
+            </div>
+          </label>
 
         <div className='flex-end mx-3 mb-5 gap-4'>
           <Link href='/' className='crveno text-sm'>
