@@ -11,29 +11,29 @@ import { styled } from '@mui/material/styles';
 
 const StyledRating = styled(Rating)(({ theme }) => ({
   '& .MuiRating-iconEmpty .MuiSvgIcon-root': {
-    color: theme.palette.action.disabled,
+    color: '#99aab5',
   },
 }));
 
 const customIcons = {
   1: {
-    icon: <SentimentVeryDissatisfiedIcon color="error" />,
+    icon: <SentimentVeryDissatisfiedIcon color="error" fontSize="large"/>,
     label: 'Very Dissatisfied',
   },
   2: {
-    icon: <SentimentDissatisfiedIcon color="error" />,
+    icon: <SentimentDissatisfiedIcon color="error" fontSize="large"/>,
     label: 'Dissatisfied',
   },
   3: {
-    icon: <SentimentSatisfiedIcon color="warning" />,
+    icon: <SentimentSatisfiedIcon color="warning" fontSize="large"/>,
     label: 'Neutral',
   },
   4: {
-    icon: <SentimentSatisfiedAltIcon color="success" />,
+    icon: <SentimentSatisfiedAltIcon color="success" fontSize="large"/>,
     label: 'Satisfied',
   },
   5: {
-    icon: <SentimentVerySatisfiedIcon color="success" />,
+    icon: <SentimentVerySatisfiedIcon color="success" fontSize="large"/>,
     label: 'Very Satisfied',
   },
 };
@@ -106,6 +106,7 @@ const Form = ({ type, post, setPost, submitting, handleSubmit }) => {
      }}
      IconContainerComponent={IconContainer}
      getLabelText={(value) => customIcons[value].label}
+     size="large"
    />
  </div>
  </label>

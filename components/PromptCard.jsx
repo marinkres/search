@@ -22,23 +22,23 @@ const StyledRating = styled(Rating)(({ theme }) => ({
 
 const customIcons = {
   1: {
-    icon: <SentimentVeryDissatisfiedIcon color="error" />,
+    icon: <SentimentVeryDissatisfiedIcon color="error" fontSize="small" />,
     label: 'Very Dissatisfied',
   },
   2: {
-    icon: <SentimentDissatisfiedIcon color="error" />,
+    icon: <SentimentDissatisfiedIcon color="error" fontSize="small"/>,
     label: 'Dissatisfied',
   },
   3: {
-    icon: <SentimentSatisfiedIcon color="warning" />,
+    icon: <SentimentSatisfiedIcon color="warning" fontSize="small"/>,
     label: 'Neutral',
   },
   4: {
-    icon: <SentimentSatisfiedAltIcon color="success" />,
+    icon: <SentimentSatisfiedAltIcon color="success" fontSize="small"/>,
     label: 'Satisfied',
   },
   5: {
-    icon: <SentimentVerySatisfiedIcon color="success" />,
+    icon: <SentimentVerySatisfiedIcon color="success" fontSize="small"/>,
     label: 'Very Satisfied',
   },
 };
@@ -133,6 +133,7 @@ const PromptCard = ({ post, handleEdit, handleDelete, handleTagClick }) => {
      readOnly
      IconContainerComponent={IconContainer}
      getLabelText={(value) => customIcons[value]?.label ?? ''}
+     size="small"
    />
  <p
  className='font-inter text-sm bluemoje cursor-pointer'
