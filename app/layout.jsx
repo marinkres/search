@@ -1,7 +1,7 @@
 import "@styles/globals.css";
-
 import Nav from "@components/Nav";
 import Provider from "@components/Provider";
+import Footer from "@components/Footer";
 
 export const metadata = {
   title: "Poseri se",
@@ -16,10 +16,11 @@ const RootLayout = ({ children }) => (
           <div className='gradient' />
         </div>
 
-        <main className='app'>
+        <div className='app' style={{ display: 'flex', flexDirection: 'column', minHeight: '100vh' }}>
           <Nav />
-          {children}
-        </main>
+          <main style={{ flex: 1 }}>{children}</main>
+          <Footer />
+        </div>
       </Provider>
     </body>
   </html>

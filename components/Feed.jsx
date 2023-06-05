@@ -73,7 +73,7 @@ const Feed = () => {
   };
 
   return (
-    <section className='feed'>
+    <section className='feed' style={{ marginTop: "-20px" }}>
       <p className="head_text">
         <PageviewIcon fontSize="inherit" style={{ color: '#FFF8F0' }}/>
       </p>
@@ -91,9 +91,10 @@ const Feed = () => {
       
       {/* All Prompts */}
       {isLoading ? (
-        <div style={{ marginTop: "110px" }}> {/* add top margin to div */}
-        <BeatLoader color={"#5865f2"} />
-      </div>
+        <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', marginTop: '100px', marginBottom: '100px'}}>
+          <BeatLoader color={'#5865f2'} />
+          <p style={{ color: '#707bf4' }}>Učitavanje...</p>
+        </div>
       ) : searchText ? (
         <PromptCardList
           data={searchedResults}

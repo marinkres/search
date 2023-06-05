@@ -49,7 +49,7 @@ IconContainer.propTypes = {
 
 const Form = ({ type, post, setPost, submitting, handleSubmit }) => {
  return (
- <section className='w-full max-w-full flex-start flex-col'>
+ <section className='w-full max-w-full flex-start flex-col' style={{marginBottom: '50px'}}>
  <h1 className='head_text text-left'>
  <span className='bluemoje'>{type} Sranje</span>
  </h1>
